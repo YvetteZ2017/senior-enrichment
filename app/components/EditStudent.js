@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { postStudent } from '../store';
+import { putStudent } from '../store';
 
-const NewStudent = (props) => {
-    const { handleSubmit, campuses } = props;
-    const campusId = +props.match.params.campusId;
-    const campus = props.campuses.find(campus => campus.id === campusId);
+const EditStudent = (props) => {
+    console.log('in EditStudent component...')
+    const { handleSubmit, students, campuses } = props;
+    const studentId = +props.match.params.studentId;
+    const student = students.find(student => student.id ===studentId);
+    console.log('students: ', students)
+    console.log('studentId: ', studentId)
+    const campus = campuses.find(campus => campus.id === student.campusId);
       return (
-        <form className="form-horizontal" onSubmit={handleSubmit}>
+        <form className="form-horizontal" onSubmit={(event) => handleSubmit(event, studentId)}>
         <fieldset>
-            <legend>Create a Student</legend>
+            <legend>Edit Student</legend>
             <div className="form-group">
                 <label className="col-xs-2 control-label">Name</label>
                 <div className="col-xs-10">
@@ -18,25 +22,26 @@ const NewStudent = (props) => {
                     type="text"
                     name="studentName"
                     placeholder="Enter student name"
+                    defaultValue={student.name}
                     />
                 </div>
             </div>
             <div className="form-group">
                 <label className="col-xs-2 control-label">Campus</label>
                 <div className="col-xs-10">
-                {
-                  campusId? 
-                  (<label>{campus.name}</label>) 
-                  : ( <select
+                    <select
                         className="form-control"
                         name="studentCampus">
+                        <option value={campus.id} selected="selected">{campus.name}</option>
                         {
-                        campuses && campuses.map(campus => (
+                        campuses && (campuses.filter(campus => campus.id !== student.campusId).map(campus => (
                             <option key={campus.id} value={campus.id}>{campus.name}</option>
                         ))
+                    
+                        )
                         }
-                    </select>)
-                }
+                    </select>
+                
                 </div>
             </div>
             <div className="form-group">
@@ -46,6 +51,7 @@ const NewStudent = (props) => {
                     className="form-control"
                     type="text"
                     name="studentImage"
+                    defaultValue={student.image}
                     placeholder="Enter the URL of the student's photo"
                     />
                 </div>
@@ -54,7 +60,7 @@ const NewStudent = (props) => {
                 <div className="col-xs-10 col-xs-offset-2">
                     <button type="submit" 
                             className="btn btn-default" 
-                            >Create Student
+                            >Submit Change
                     </button>
                 </div>
             </div>
@@ -64,21 +70,26 @@ const NewStudent = (props) => {
 }
 
 
-const mapStatesToProps = (state) => (
-    {campuses: state.campuses}
-)
+const mapStatesToProps = (state) => {
+    console.log('mapping states....');
+    return {
+        students: state.students,
+        campuses: state.campuses
+    }
+}
 
   
 const mapDispatchToProps = function (dispatch, ownProps) {
     return {
-        handleSubmit (event) {
+        handleSubmit (event, id) {
+            console.log('mapping dispatch in edit student.....')
             event.preventDefault();
             const name = event.target.studentName.value;
+            const campusId = event.target.studentCampus.value;
             const image = event.target.studentImage.value || undefined;
-            const campusId = ownProps.match.params.campusId || event.target.studentCampus.value;
-            dispatch(postStudent({ name, campusId, image }, ownProps.history));
+            dispatch(putStudent({ id, name, campusId, image }, ownProps.history));
         }
     };
 };
   
-export default connect(mapStatesToProps, mapDispatchToProps)(NewStudent);
+export default connect(mapStatesToProps, mapDispatchToProps)(EditStudent);

@@ -60,22 +60,44 @@ const students = [
     name: 'Bolt',
     image: 'https://vignette.wikia.nocookie.net/nekoatsume/images/f/fd/Bolt_Sprite.png/revision/latest/scale-to-width-down/150?cb=20160720195611',
     campusId: 4
+}, {
+    name: 'Whiteshadow',
+    image: "https://vignette.wikia.nocookie.net/nekoatsume/images/a/a1/Whiteshadow_Sprite.png/revision/latest/scale-to-width-down/80?cb=20161217130728",
+    campusId: 4
+}, {
+    name: 'Bengal Jack',
+    image: "https://vignette.wikia.nocookie.net/nekoatsume/images/2/22/Bengal_Jack_Sprite.png/revision/latest/scale-to-width-down/100?cb=20160717122506",
+    campusId: 1
+}, {
+    name: 'Breezy',
+    image: "https://vignette.wikia.nocookie.net/nekoatsume/images/e/ed/Breezy_Sprite.png/revision/latest/scale-to-width-down/150?cb=20160721101647",
+    campusId: 2
+}, {
+    name: 'Misty',
+    image: "https://vignette.wikia.nocookie.net/nekoatsume/images/a/a9/Misty_Sprite.png/revision/latest/scale-to-width-down/150?cb=20160730173429",
+    campusId: 3
+}, { 
+    name: 'Cocoa',
+    image: "https://vignette.wikia.nocookie.net/nekoatsume/images/7/7f/Cocoa_Sprite_.png/revision/latest/scale-to-width-down/150?cb=20160419070445",
+    campusId: 2
 }];
 
 
 const campuses = [
   {
     name: 'Otaru',
-    image: 'https://vignette.wikia.nocookie.net/nekoatsume/images/1/16/Rustic_Style.png/revision/latest?cb=20151107131618',
+    image: '/images/Otaru.jpg',
   }, {
     name: 'Takazake',
-    image: 'https://vignette.wikia.nocookie.net/nekoatsume/images/b/b3/Cafe_Style.jpg/revision/latest?cb=20161014013312',
+    image: '/images/Takazake.png',
 }, {
     name: 'Haru',
-    image: 'https://vignette.wikia.nocookie.net/nekoatsume/images/2/2b/Sugary_July.png/revision/latest?cb=20160714090042',
+    image: '/images/Haru.png',
 }, {
     name: 'Fuyu',
-    image: 'https://vignette.wikia.nocookie.net/nekoatsume/images/c/c8/OriginalStyle-snow.JPG/revision/latest?cb=20160203004401',
+    image: '/images/Fuyu.jpg',
+}, {
+    name: 'test'
 }];
 
 const seed = () =>
