@@ -20,14 +20,6 @@ api.get('/students', (req, res, next) => {
 	.catch(next);
 });
 
-//GET students from a campus
-// api.get('/campuses/:campusId/students', (req, res, next) => {
-// 	const campusId = req.params.campusId;
-// 	Student.findAll({where: { campusId }})
-// 	.then(students => res.json(students))
-// 	.catch(next);
-// });
-
 //GET a campus 
 api.get('/campuses/:campusId/', (req, res, next) => {
 	Campus.findById(req.params.campusId, {include: [{all: true}]})
