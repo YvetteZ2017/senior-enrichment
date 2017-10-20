@@ -10,12 +10,12 @@ const SingleCampus = (props) => {
     const students = props.students;
     return (
         <div>
-            <img src={ campus.image } height={400} width={600}/>
-            <h3>{campus.name} Campus</h3>
+            <img src={ campus.image } className="campus"/>
+            <h3 className="center">{campus.name} Campus</h3>
             <Students students={students}/>
             <div className="row">
-            <Link className="link-button" to={`/campuses/${campus.id}/create-new-student`}>Create New Student</Link>
-            <Link className="link-button" to={`/campuses/${campus.id}/edit-campus`}>Edit Campus</Link>            
+            <Link className="link-button btn btn-default" to={`/campuses/${campus.id}/create-new-student`}>Create New Student</Link>
+            <Link className="link-button btn btn-default" to={`/campuses/${campus.id}/edit-campus`}>Edit Campus</Link>            
             </div>
         </div>
     )

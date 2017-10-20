@@ -9,12 +9,12 @@ const Campuses = (props) => {
   return(
     <div>
       <h3>Campuses</h3>
-      <div className="row">
+      <div className="row space">
         {
           campuses.map(campus => (<CampusItem key={campus.id} campus={campus} />))
         }
       </div>
-      <Link className="link-button" to={'/create-new-campus'}>Create New Campus</Link>      
+      <Link className="btn btn-default link-button" to={'/create-new-campus'}>Create New Campus</Link>      
       </div>
   )
 }

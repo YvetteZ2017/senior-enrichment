@@ -7,9 +7,9 @@ import { deleteCampus } from '../store';
 const CampuseItem = (props) => {
   const campus = props.campus;
   return (
-            <div className="col-xs-5 media item" key={ campus.id }>
+            <div className="media campusitem col-sm-5" key={ campus.id }>
                 <Link className="thumbnail media-body" to={`/campuses/${campus.id}`}>
-                    <img className="campus" src={ campus.image } />
+                    <img className="campus-img" src={ campus.image } />
                     <div className="caption">
                     <h5>
                         <span>{ campus.name }</span>

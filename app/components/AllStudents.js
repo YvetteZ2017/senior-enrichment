@@ -9,8 +9,7 @@ const AllStudents = (props) => {
     return (
         <div>
             <Students students={students}/>
-            <Link className="link-button" to={'/create-new-student'}>Create New Student</Link>
-            
+            <Link className="btn btn-default link-button" to={'/create-new-student'}>Create New Student</Link>
         </div>
     )
 }

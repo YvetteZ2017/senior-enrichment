@@ -4,7 +4,7 @@ import Campuses from './Campuses';
 import AllStudents from './AllStudents';
 
 const Navbar = () => (
-    <nav className="navbar fixed-top navbar-default">
+    <nav className="navbar navbar-fixed-top navbar-default">
         <div className="container">
             <ul className="nav navbar-nav">
                 <li>

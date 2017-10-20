@@ -79,7 +79,15 @@ const students = [
 }, { 
     name: 'Cocoa',
     image: "https://vignette.wikia.nocookie.net/nekoatsume/images/7/7f/Cocoa_Sprite_.png/revision/latest/scale-to-width-down/150?cb=20160419070445",
+    campusId: 1
+}, { 
+    name: 'Pickles',
+    image: "https://vignette.wikia.nocookie.net/nekoatsume/images/e/e8/Pickles_Sprite.png/revision/latest/scale-to-width-down/150?cb=20160731113644",
     campusId: 2
+}, { 
+    name: 'Pepper',
+    image: "https://vignette.wikia.nocookie.net/nekoatsume/images/c/c1/Pepper_Sprite.png/revision/latest/scale-to-width-down/150?cb=20160730173035",
+    campusId: 3
 }];
 
 
@@ -89,15 +97,13 @@ const campuses = [
     image: '/images/Otaru.jpg',
   }, {
     name: 'Takazake',
-    image: '/images/Takazake.png',
+    image: '/images/Takazake.jpg',
 }, {
     name: 'Haru',
-    image: '/images/Haru.png',
+    image: '/images/Haru.jpg',
 }, {
     name: 'Fuyu',
     image: '/images/Fuyu.jpg',
-}, {
-    name: 'test'
 }];
 
 const seed = () =>
