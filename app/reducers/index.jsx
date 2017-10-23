@@ -132,6 +132,7 @@ export function deleteCampus (campusId) {
   return function thunk (dispatch) {
     dispatch(removeCampus(campusId))
     axios.delete(`/api/campuses/${campusId}`)
+      .then(() => dispatch(fetchStudents()))
         .catch(err => console.error(`Removing campus: ${campusId} unsuccesful`, err));
   }
 }
